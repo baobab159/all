@@ -1,5 +1,5 @@
 import java.util.Scanner;
-public class obiektowe
+public class marks
 {
 	static int NumberOfSubjects;
 	int NumberOfMarks, subject, sum=0, fullsum=0, mark;
