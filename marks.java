@@ -14,8 +14,7 @@ public class SchoolMarks
 	
 	int[][] marks=new int[numberOfSubjects-1][numberOfMarks-1];
 	
-	void getMarks()
-	{
+	void getMarks(){
 		System.out.print("Ile przedmiotów?");
 		Scanner numberOfSubjectsScanner=new Scanner(System.in);
 		numberOfSubjects =numberOfSubjectsScanner.nextInt();
