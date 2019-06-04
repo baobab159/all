@@ -1,50 +1,57 @@
 import java.util.Scanner;
-public class marks
+public class SchoolMarks
 {
-	static int NumberOfSubjects;
-	int NumberOfMarks, subject, sum=0, fullsum=0, mark;
+	static int numberOfSubjects;
+	int numberOfMarks, subject, sum=0, fullsum=0, mark;
 	
 	public static void main(String args[])
 	{
-		System.out.print("Ile przedmiotów?");
-		Scanner NumberOfSubjectsscanner=new Scanner(System.in);
-		NumberOfSubjects=NumberOfSubjectsscanner.nextInt();
-		obiektowe wywołanie=new obiektowe();
-		wywołanie.getMarks();
-		wywołanie.SubjectAverage(NumberOfSubjectsscanner, ); //co tutaj wpisać?
-		wywołanie.FullAverage(NumberOfSubjects);
+		SchoolMarks firstYear=new SchoolMarks();
+		firstYear.getMarks();
+		firstYear.SubjectAverage(numberOfSubjects,  );
+		firstYear.FullAverage(numberOfSubjects);
 	}
 	
-	int[][] marks=new int[NumberOfSubjects-1][NumberOfMarks-1];
+	int[][] marks=new int[numberOfSubjects-1][numberOfMarks-1];
 	
 	void getMarks()
 	{
-		
+		System.out.print("Ile przedmiotów?");
+		Scanner numberOfSubjectsScanner=new Scanner(System.in);
+		numberOfSubjects =numberOfSubjectsScanner.nextInt();
 		System.out.println("Ile ocen?");
-		Scanner NumberOfMarksscanner=new Scanner(System.in);
-		NumberOfMarks=NumberOfMarksscanner.nextInt();
-		Scanner marksscanner=new Scanner(System.in);
+		Scanner numberOfMarksscanner = new Scanner(System.in);
+		numberOfMarks = numberOfMarksscanner.nextInt();
+		Scanner marksScanner = new Scanner(System.in);
 		System.out.println("Wpisuj");
-		for(int Subject=0; Subject<NumberOfMarks; Subject++)
-			for(int MarkIndex = 0; MarkIndex<NumberOfMarks; MarkIndex++)
-				if(marks[Subject][MarkIndex]<7 && marks[Subject][MarkIndex]>0)
-					marks[Subject][MarkIndex] = marksscanner.nextInt();
-					else while(!(marks[Subject][MarkIndex]<7 && marks[Subject][MarkIndex]>0))
-						marks[Subject][MarkIndex] = marksscanner.nextInt();
+		for(int subject = 0; subject<numberOfMarks; subject++)	{
+			for(int markIndex = 0; markIndex<numberOfMarks; markIndex++)	{
+				if(marks[subject][markIndex]<7 && marks[subject][markIndex]>0) 	{
+					marks[subject][markIndex] = marksScanner.nextInt();
+				} else	{
+					while(! (marks[subject][markIndex]<7 && marks[subject][markIndex]>0)) {
+						marks[subject][markIndex] = marksScanner.nextInt();
+					}
+				}
+			}
+		}
 	}
 	
-	double SubjectAverage(int Subject, int NumberOfMarks)
+	double SubjectAverage(int subject, int numberOfMarks)
 	{
-		for(Subject=0; Subject<NumberOfSubjects; Subject++)
-			for(mark=0; mark<NumberOfMarks; mark++)
-				sum+=marks[subject][mark];
-		return sum/NumberOfMarks;
+		for(subject=0; subject<numberOfSubjects; subject++)	{
+			for(mark = 0; mark<numberOfMarks; mark++)	{
+				sum += marks[subject][mark];
+			}
+		}
+		return sum/numberOfMarks;
 	}
 	
-	double FullAverage(int NumberOfSubjects)
+	double FullAverage(int numberOfSubjects)
 	{
-		for(int subject=0; subject<NumberOfSubjects; subject++)
-			fullsum+=SubjectAverage(subject, NumberOfMarks);
-		return fullsum/NumberOfSubjects;
+		for(int subject=0; subject<numberOfSubjects; subject++)	{
+			fullsum += SubjectAverage(subject, numberOfMarks);
+		}
+		return fullsum/numberOfSubjects;
 	}
 }
