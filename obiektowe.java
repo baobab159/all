@@ -11,7 +11,7 @@ public class obiektowe
 		NumberOfSubjects=NumberOfSubjectsscanner.nextInt();
 		obiektowe wywołanie=new obiektowe();
 		wywołanie.getMarks();
-		wywołanie.SubjectAverage(NumberOfSubjectsscanner, );
+		wywołanie.SubjectAverage(NumberOfSubjectsscanner, ); //co tutaj wpisać?
 		wywołanie.FullAverage(NumberOfSubjects);
 	}
 	
