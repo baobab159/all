@@ -4,8 +4,7 @@ public class SchoolMarks
 	static int numberOfSubjects;
 	int numberOfMarks, subject, sum=0, fullsum=0, mark;
 	
-	public static void main(String args[])
-	{
+	public static void main(String args[])	{
 		SchoolMarks firstYear=new SchoolMarks();
 		firstYear.getMarks();
 		firstYear.SubjectAverage(numberOfSubjects,  );
