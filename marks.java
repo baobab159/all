@@ -1,31 +1,22 @@
 import java.util.Scanner;
-public class SchoolMarks
-{
+public class SchoolMarks {
 	static int numberOfSubjects;
 	int numberOfMarks, sum, fullsum, mark;
-	int[][] marks;//=new int[numberOfSubjects-1][numberOfMarks-1];
+	int[][] marks;
 	
 	public static void main(String args[]) {
-		SchoolMarks firstYear=new SchoolMarks();
+		SchoolMarks firstYear = new SchoolMarks();
 		firstYear.getMarks();
-		
-		firstYear.SubjectAverage(numberOfSubjects,);
+		for(int subject=0; subject<numberOfSubjects; subject++) {
+			firstYear.SubjectAverage(subject, this.marks[subject].length);
+		}
 		firstYear.FullAverage(numberOfSubjects);
 	}
 	
-	int getNumberOfSubjects() {
-		return numberOfSubjects;
-	}
-	
-	int getNumberOfMarks() {
-		return numberOfMarks;
-	}
-	
-	
 	void getMarks() {
 		System.out.print("Ile przedmiotów?");
-		Scanner numberOfSubjectsScanner=new Scanner(System.in);
-		numberOfSubjects =numberOfSubjectsScanner.nextInt();
+		Scanner numberOfSubjectsScanner = new Scanner(System.in);
+		numberOfSubjects = numberOfSubjectsScanner.nextInt();
 		System.out.println("Ile ocen?");
 		Scanner numberOfMarksscanner = new Scanner(System.in);
 		numberOfMarks = numberOfMarksscanner.nextInt();
@@ -33,8 +24,7 @@ public class SchoolMarks
 		System.out.println("Wpisuj");
 		
 		for(int subject = 0; subject<numberOfMarks; subject++) {
-			for(int markIndex = 0; markIndex<numberOfMarks; markIndex++)
-			{
+			for(int markIndex = 0; markIndex<numberOfMarks; markIndex++) {
 				while(marks[subject][markIndex]<1 && marks[subject][markIndex]>6) {
 					marks[subject][markIndex] = marksScanner.nextInt();
 				}
@@ -42,9 +32,8 @@ public class SchoolMarks
 		}
 	}
 	
-	double SubjectAverage(int subject, int numberOfMarks)
-	{
-		for(subject=0; subject<numberOfSubjects; subject++) {
+	double SubjectAverage(int subject, int numberOfMarks) {
+		for(subject = 0; subject<numberOfSubjects; subject++) {
 			for(mark = 0; mark<numberOfMarks; mark++) {
 				sum += marks[subject][mark];
 			}
@@ -53,7 +42,7 @@ public class SchoolMarks
 	}
 	
 	double FullAverage(int numberOfSubjects) {
-		for(int subject=0; subject<numberOfSubjects; subject++) {
+		for(int subject = 0; subject<numberOfSubjects; subject++) {
 			fullsum += SubjectAverage(subject, numberOfMarks);
 		}
 		return fullsum/numberOfSubjects;
