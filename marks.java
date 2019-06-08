@@ -19,15 +19,15 @@ public class SchoolMarks {
 		Scanner numberOfSubjectsScanner = new Scanner(System.in);
 		numberOfSubjects = numberOfSubjectsScanner.nextInt();
 		System.out.println("Ile ocen?");
-		Scanner numberOfMarksscanner = new Scanner(System.in);
-		numberOfMarks = numberOfMarksscanner.nextInt();
+		Scanner numberOfMarksScanner = new Scanner(System.in);
+		numberOfMarks = numberOfMarksScanner.nextInt();
 		Scanner marksScanner = new Scanner(System.in);
 		System.out.println("Wpisuj");
 		
 		for(int subject = 0; subject<numberOfMarks; subject++) {
 			for(int markIndex = 0; markIndex<numberOfMarks; markIndex++) {
 				while(marks[subject][markIndex]<1 && marks[subject][markIndex]>6) {
-					marks[subject][markIndex] = marksScanner.nextInt();
+					this.marks[subject][markIndex] = marksScanner.nextInt();
 				}
 			}
 		}
