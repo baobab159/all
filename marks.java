@@ -1,14 +1,15 @@
 import java.util.Scanner;
 public class SchoolMarks {
 	static int numberOfSubjects;
+	private static int[][] marks;
 	int numberOfMarks, sum, fullsum, mark;
-	int[][] marks;
+//	int[][] marks;//=new int[numberOfSubjects-1][numberOfMarks-1];
 	
 	public static void main(String args[]) {
 		SchoolMarks firstYear = new SchoolMarks();
 		firstYear.getMarks();
 		for(int subject=0; subject<numberOfSubjects; subject++) {
-			firstYear.SubjectAverage(subject, this.marks[subject].length);
+			firstYear.SubjectAverage(subject, marks[subject].length);
 		}
 		firstYear.FullAverage(numberOfSubjects);
 	}
